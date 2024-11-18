@@ -3,8 +3,8 @@ import { database } from './aquariumData.js';
 export const fishList = () => {
    let fishHTML = '';
 
-   for (fish of fishList) {
-      fishHTML += `
+   for (const fish of database.fish) {
+      fishHTML += `,
     <article class="fish">
       <img src="${fish.image}" alt="${fish.name}" class="fish_image">
       <div class="fish_details">
