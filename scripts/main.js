@@ -13,4 +13,4 @@ const fishHTML = fishList()
 
 // Render each HTML string to the correct DOM element
 
-const fishList = document.querySelector("#fishList")
+const fishListHTML = document.querySelector("#fishList")
