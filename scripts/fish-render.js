@@ -4,6 +4,6 @@ export const renderFishToDOM = (fishHTML) => {
     if (fishList) {
         fishList.innerHTML = fishHTML;
     } else {
-        console.error('Could not find element with id "movie-list"');
+        console.error('Could not find element with id "fish-list"');
     }
 };
