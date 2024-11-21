@@ -1,12 +1,23 @@
-import { fishList, renderFishToDom } from './fishList.js'
-//import { tipList } from './tipList.js'
-//import { locationList } from './locationList.js'
+import { fishList } from './fishList.js'
+import { tipList } from './tipList.js'
+import { locationList } from './locationList.js'
 
 // Generate the fish list
-const fishHTML = fishList();
-renderFishToDom(fishHTML);
+const fishHTML = fishList()
+
+
+// Insert it into the DOM
+
 // Generate the care tips
-//const tipHTML = tipList()
+const tipHTML = tipList()
 
 // Generate the location list
-//const locationHTML = locationList()
+const locationHTML = locationList()
+
+// Render each HTML string to the correct DOM element
+
+// Build up a single string containing both chunks of HTM
+
+
+
+

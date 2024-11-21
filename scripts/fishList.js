@@ -1,28 +1,25 @@
 import { database } from './aquariumData.js';
 
 export const fishList = () => {
-   let fishHTML = ''
-   for (const fish of database.fish) {
-      fishHTML += `
-              <article class="movie">
-                  <img src="${fish.image}" alt="${fish.name} poster" class="fish__image">
-                  <div class="fish__details">
-                      <h2 class="fish_name">${fish.name}</h2>
-                      <p class="fish_species">${fish.species}</p>
-                  </div>
-              </article>
-          `;
-   }
+   const fishArray = database.fish;
 
-   return fishHTML
+   const fishHTML = fishArray.map(fish => {
+      return `
+            <div class="fish-card">
+                <img src="${fish.image}" alt="${fish.name}" class="fish-image" />
+                <h2>${fish.name}</h2>
+                <p><strong>Species:</strong> ${fish.species}</p>
+                <p><strong>Length:</strong> ${fish.length} inches</p>
+                <p><strong>Diet:</strong> ${fish.diet}</p>
+                </div>
+        `;
+   }).join("");
+
+   return fishHTML;
 };
 
-export const renderFishToDom = (fishHTML) => {
-   const fishList = document.getElementById('fishList');
-
-   if (fishList) {
-      fishList.innerHTML = fishHTML;
-   } else {
-      console.error('Could not find element with id "fishList"');
-   }
-};
+// Inject fish cards into the #fishList section
+const fishListContainer = document.querySelector("#fishList");
+if (fishListContainer) {
+   fishListContainer.innerHTML = fishList();
+}
